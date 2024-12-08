@@ -14,7 +14,7 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.1
-      - name: Install Bundler
+      - name: Install Bundler and Dependencies
         run: |
           gem install bundler -v 2.5.23
           bundle _2.5.23_ install
@@ -24,6 +24,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./_site
-        publish_branch: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages
